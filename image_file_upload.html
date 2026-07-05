@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Laravel admin | Model-Form</title>
+
+
+    <link rel="stylesheet" href="css/google-fonts.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/adminlte.min.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="css/docsearch.min.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed text-sm">
+<div class="wrapper">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+            </li>
+
+                    </ul>
+
+        <!-- SEARCH FORM -->
+        <form class="form-check-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar docsearch" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <span class="ml-5"><a href="/docs/zh/1.x/changelog#v1.8.9%20(2020-11-02)" class="text-danger">目前于1.8版本发现一处未授权访问安全漏洞，正在使用1.8版本的同学请尽快更新到v1.8.10版本！！！</a></span>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-none d-sm-inline-block">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="https://demo.laravel-admin.org" target="_blank" class="nav-link">Demo</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="https://github.com/z-song/laravel-admin" class="nav-link" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+
+            <li class="nav-item dropdown ml-2">
+                <a class="btn btn-info btn-sm" href="#" id="navbarLangDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-globe-asia"></i>
+                </a>
+                <div class="dropdown-menu py-0" aria-labelledby="navbarLangDropdown">
+                                        <a class="dropdown-item" href="/docs/zh">中文</a>
+                                        <a class="dropdown-item" href="/docs/en">English</a>
+                                    </div>
+            </li>
+        </ul>
+    </nav>
+
+    <aside class="main-sidebar elevation-4 sidebar-light-info">
+        <a href="/" class="brand-link logo-switch navbar-light text-info">
+            <img src="images/logo.png" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs" style="height: 29px;margin-top: 1px;margin-left: 13px;">
+            <span>
+                <img src="images/logo.png" alt="AdminLTE Docs Logo Large" class="brand-image-xs logo-xl" style="left: 30px">
+                <span style="position: absolute;left:58px;" class="text-lg">aravel-admin</span>
+            </span>
+        </a>
+        <div class="sidebar">
+            <nav class="mt-2">
+                <ul role="menu" class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview">
+<li class="nav-item"><a href="/" class="nav-link"><i class="nav-icon fas fa-home"></i><p>Overview</p></a></li>
+<li class="nav-item has-treeview">
+<a href="#" class="nav-link"><i class="nav-icon fas fa-tachometer-alt"></i><p>Getting started
+<i class="right fas fa-angle-left"></i></p></a><ul class="nav nav-treeview" style="display: none;">
+<li class="nav-item"><a href="./installation.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Installation</p></a></li>
+<li class="nav-item"><a href="./quick_start.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Quick start</p></a></li>
+<li class="nav-item"><a href="./configuration.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Configuration</p></a></li>
+<li class="nav-item"><a href="./upgrading.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Upgrading</p></a></li>
+<li class="nav-item"><a href="./page_content_and_layout.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Page content & Layout</p></a></li>
+</ul>
+</li>
+<li class="nav-item has-treeview">
+<a href="#" class="nav-link"><i class="nav-icon fas fa-th"></i><p>Model grid
+<i class="right fas fa-angle-left"></i></p></a><ul class="nav nav-treeview" style="display: none;">
+<li class="nav-item"><a href="/docs/en/model-grid" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Basic usage</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-column" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Column usage</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-column-display" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Column display</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-filters" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Filters</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-column-filter" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Column filter</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-inline-edit" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Inline edit</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-actions" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Row actions</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-custom-actions" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Custom row & batch actions</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-export" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Data export</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-header-footer" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Header & Footer</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-init" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Grid Initialization</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-total-row" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Total row</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-quick-search" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Quick search</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-spec-selector" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Spec selector</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-quick-create" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Quick create</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-custom-tools" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Custom tools</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-hotkeys" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Hot keys</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-grid-soft-deletes" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Soft Deleting</p></a></li>
+</ul>
+</li>
+<li class="nav-item has-treeview menu-open">
+<a href="#" class="nav-link active"><i class="nav-icon fas fa-paste"></i><p>Model form
+<i class="right fas fa-angle-left"></i></p></a><ul class="nav nav-treeview" style="display: block;">
+<li class="nav-item"><a href="/docs/en/model-form" class="nav-link active"><i class="nav-icon far fa-circle"></i><p>Basic usage</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-fields" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Form fields</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-upload" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Image/File upload</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-json-fields" class="nav-link"><i class="nav-icon far fa-circle"></i><p>JSON fields</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-relationships" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Relationship</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-linkage" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Form linkage</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-field-management" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Form field management</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-validation" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Form validation</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-callback" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Form callback</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-init" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Form Initialization</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-form-layout" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Form layout</p></a></li>
+</ul>
+</li>
+<li class="nav-item has-treeview">
+<a href="#" class="nav-link"><i class="nav-icon fas fa-eye"></i><p>Model show
+<i class="right fas fa-angle-left"></i></p></a><ul class="nav nav-treeview" style="display: none;">
+<li class="nav-item"><a href="/docs/en/model-show" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Basic usage</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-show-fields" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Fields</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-show-relationship" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Relationship</p></a></li>
+<li class="nav-item"><a href="/docs/en/model-show-extension" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Extension</p></a></li>
+</ul>
+</li>
+<li class="nav-item"><a href="/docs/en/model-tree" class="nav-link"><i class="nav-icon fas fa-tree"></i><p>Model tree</p></a></li>
+<li class="nav-item"><a href="/docs/en/data-form" class="nav-link"><i class="nav-icon fas fa-database"></i><p>Data from</p></a></li>
+<li class="nav-item has-treeview">
+<a href="#" class="nav-link"><i class="nav-icon fas fa-anchor"></i><p>Admin extensions
+<i class="right fas fa-angle-left"></i></p></a><ul class="nav nav-treeview" style="display: none;">
+<li class="nav-item"><a href="/docs/en/extension-development" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Extension development</p></a></li>
+<li class="nav-item"><a href="/docs/en/extension-helpers" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Helpers</p></a></li>
+<li class="nav-item"><a href="/docs/en/extension-media-manager" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Media manager</p></a></li>
+<li class="nav-item"><a href="/docs/en/extension-api-tester" class="nav-link"><i class="nav-icon far fa-circle"></i><p>API tester</p></a></li>
+<li class="nav-item"><a href="/docs/en/extension-config" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Config manager</p></a></li>
+<li class="nav-item"><a href="/docs/en/extension-scheduling" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Task scheduling</p></a></li>
+</ul>
+</li>
+<li class="nav-item"><a href="/docs/en/commands" class="nav-link"><i class="nav-icon fas fa-terminal"></i><p>Console commands</p></a></li>
+<li class="nav-item"><a href="/docs/en/content-message" class="nav-link"><i class="nav-icon fas fa-comments"></i><p>Content message</p></a></li>
+<li class="nav-item"><a href="/docs/en/widgets" class="nav-link"><i class="nav-icon fas fa-box"></i><p>Widgets</p></a></li>
+<li class="nav-item"><a href="/docs/en/frontend" class="nav-link"><i class="nav-icon fab fa-js"></i><p>CSS/JavaScript</p></a></li>
+<li class="nav-item"><a href="/docs/en/permission" class="nav-link"><i class="nav-icon fas fa-ban"></i><p>Permissions</p></a></li>
+<li class="nav-item"><a href="/docs/en/custom-authentication" class="nav-link"><i class="nav-icon fas fa-handshake"></i><p>Custom authentication</p></a></li>
+<li class="nav-item"><a href="/docs/en/custom-navbar" class="nav-link"><i class="nav-icon fas fa-compass"></i><p>Custom Navbar</p></a></li>
+<li class="nav-item"><a href="/docs/en/custom-chart" class="nav-link"><i class="nav-icon fas fa-chart-pie"></i><p>Custom chart</p></a></li>
+<li class="nav-item"><a href="/docs/en/changelog" class="nav-link"><i class="nav-icon fas fa-history"></i><p>Changelog</p></a></li>
+</ul>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="content-wrapper pl-5 pr-4 py-2" id="pjax-container" style="min-height: 124.688px;">
+        <div class="content-header">
+            <h1 class="text-dark">File/Image upload</h1>
+        </div>
+
+        <div class="content px-2">
+
+            <div class="row">
+                <div class="col">
+                    <div class="toc m-4">
+                        <ul>
+                                                        <li>
+                                <a href="#Upload image">Upload image</a>
+                                                            </li>
+                                                        <li>
+                                <a href="#File Upload">File Upload</a>
+                                                            </li>
+                                                        <li>
+                                <a href="#Multi-picture/file upload">Multi-picture/file upload</a>
+                                                                <ul>
+                                                                        <li>
+                                        <a href="#One-to-many relationship processing">One-to-many relationship processing</a>
+                                    </li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li>
+                                <a href="#Storage path/file name">Storage path/file name</a>
+                                                            </li>
+                                                        <li>
+                                <a href="#Upload configuration">Upload configuration</a>
+                                                                <ul>
+                                                                        <li>
+                                        <a href="#Local Upload">Local Upload</a>
+                                    </li>
+                                                                        <li>
+                                        <a href="#Cloud upload">Cloud upload</a>
+                                    </li>
+                                                                    </ul>
+                                                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="ad" class="float-right">
+                        <script async="" src="https://cdn.carbonads.com/carbon.js?serve=CK7DT53L&amp;placement=laraveladminorg" id="_carbonads_js"></script>
+                    </div>
+                </div>
+            </div>
+
+            
+<p>You need to complete the upload configuration before using the image upload function. Please read the configuration section of the document on this page.</p>
+<h2 id="Upload image"><a href="#Upload%20image">Upload image</a></h2>
+<p>Using local upload, the image upload directory is configured in <code>upload.image</code> in the file <code>config/admin.php</code>. If the directory does not exist, you need to create the directory and open the write permission.</p>
+<p>Various methods such as compression, cropping, and watermarking can be used, and you need to install <a href="http://image.intervention.io/getting_started/installation">intervention/image</a> first.</p>
+<p>For more usage methods, please refer to [<a href="http://image.intervention.io/getting_started/introduction">Intervention</a>]:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Modify the image upload path and file name</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token variable">$dir</span><span class="token punctuation">,</span> <span class="token variable">$name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// crop the picture</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">crop</span><span class="token punctuation">(</span>int <span class="token variable">$width</span><span class="token punctuation">,</span> int <span class="token variable">$height</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>int <span class="token variable">$x</span><span class="token punctuation">,</span> int <span class="token variable">$y</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// add watermark</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token variable">$watermark</span><span class="token punctuation">,</span><span class="token single-quoted-string string">'center'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add picture delete button</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">removable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// keep pictures when deleting data</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">retainable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add a download button, click to download</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">downloadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Generate thumbnails after uploading pictures, Since v1.7.2</p>
+<pre class=" language-php"><code class=" language-php"><span class="token comment">// Generate thumbnails while uploading pictures</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'small'</span><span class="token punctuation">,</span> <span class="token variable">$width</span> <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token variable">$height</span> <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// or multiple thumbnails</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'small'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'small'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'small'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Use thumbnails in models</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">class</span> <span class="token class-name">Photo</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token package"><span class="token punctuation">\</span>Encore<span class="token punctuation">\</span>Admin<span class="token punctuation">\</span>Traits<span class="token punctuation">\</span>Resizable</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// To access thumbnail</span>
+<span class="token variable">$photo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'small'</span><span class="token punctuation">,</span><span class="token single-quoted-string string">'photo_column'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="File Upload"><a href="#File%20Upload">File Upload</a></h2>
+<p>Using local upload, the file upload directory is configured in <code>upload.file</code> in the file <code>config/admin.php</code>. If the directory does not exist, you need to create the directory and open the write permission.</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Modify the file upload path and file name</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token variable">$dir</span><span class="token punctuation">,</span> <span class="token variable">$name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// and set the upload file type</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">rules</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'mimes:doc,docx,xlsx'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add file delete button</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">removable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Keep files when deleting data</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">retainable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add a download button, click to download</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">downloadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="Multi-picture/file upload"><a href="#Multi-picture/file%20upload">Multi-picture/file upload</a></h2>
+<pre class=" language-php"><code class=" language-php"><span class="token comment">// Multi-map</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">multipleImage</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add delete button</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">multipleImage</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">removable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// multiple files</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">multipleFile</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add delete button</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">multipleFile</span><span class="token punctuation">(</span><span class="token variable">$column</span><span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token variable">$label</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">removable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// draggable sorting since v1.6.12</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">multipleImage</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'pictures'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">sortable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The data submitted when uploading multiple pictures/files is an array of file paths, which can be directly stored in the <code>JSON</code> type field of mysql.</p>
+<p>If you use mongodb, you can also store directly, but if you use the string type to store, you need to specify the data storage format,</p>
+<p>For example, if you want to use json strings to store file data, you need to define modifiers and accessors for the fields in the model, for example, the field name is <code>pictures</code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">setPicturesAttribute</span><span class="token punctuation">(</span><span class="token variable">$pictures</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">is_array</span><span class="token punctuation">(</span><span class="token variable">$pictures</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">attributes</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'pictures'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">json_encode</span><span class="token punctuation">(</span><span class="token variable">$pictures</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">getPicturesAttribute</span><span class="token punctuation">(</span><span class="token variable">$pictures</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$pictures</span><span class="token punctuation">,</span> <span class="token boolean constant">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Of course, you can also specify any other format.</p>
+<h3 id="One-to-many relationship processing"><a href="#One-to-many%20relationship%20processing">One-to-many relationship processing</a></h3>
+<blockquote>
+<p>Since v1.8.0</p>
+</blockquote>
+<p>Assuming that each article in the articles table has multiple attachments, and the attachments are stored in the <code>path</code> field of the attachments table, then it can be handled as follows</p>
+<pre class=" language-php"><code class=" language-php">articles
+    id<span class="token operator">-</span>integer
+    title<span class="token operator">-</span>string
+
+attachments
+    id<span class="token operator">-</span>integer
+    path<span class="token operator">-</span>string</code></pre>
+<p>The model is:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">class</span> <span class="token class-name">Article</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">attachments</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">hasMany</span><span class="token punctuation">(</span>Attachment<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Attachment</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Use in form:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">multipleFile</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'attachments'</span><span class="token punctuation">,</span><span class="token single-quoted-string string">'Attachments'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">pathColumn</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'path'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">removable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The first parameter of the <code>multipleFile</code> method uses the relationship name <code>attachments</code>, and the method <code>pathColumn</code> is used to specify that the file upload path is stored in the <code>path</code> field of the association table.</p>
+<h2 id="Storage path/file name"><a href="#Storage%20path/file%20name">Storage path/file name</a></h2>
+<pre class=" language-php"><code class=" language-php">
+<span class="token comment">// Modify the upload directory</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'picture'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'public/upload/image1/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Use a randomly generated file name (md5(uniqid()).extension)</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'picture'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">uniqueName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Custom file name</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">image</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'picture'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token single-quoted-string string">'test.'</span><span class="token punctuation">.</span><span class="token variable">$file</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">guessExtension</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="Upload configuration"><a href="#Upload%20configuration">Upload configuration</a></h2>
+<p>Before using file upload, you must first complete the necessary configuration, configure local upload and cloud upload according to your situation</p>
+<h3 id="Local Upload"><a href="#Local%20Upload">Local Upload</a></h3>
+<p>First add storage configuration, <code>config/filesystems.php</code> add a <code>disk</code>:</p>
+<pre class=" language-php"><code class=" language-php">
+<span class="token single-quoted-string string">'disks'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+
+    <span class="token single-quoted-string string">'admin'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'driver'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'local'</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'root'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">public_path</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'uploads'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'visibility'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'public'</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'url'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">env</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'APP_URL'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token single-quoted-string string">'/uploads'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre>
+<p>Set the upload path to <code>public/uploads</code> (public_path('uploads')).</p>
+<p>Then select the uploaded <code>disk</code> and open <code>config/admin.php</code> to find:</p>
+<pre class=" language-php"><code class=" language-php">
+<span class="token single-quoted-string string">'upload'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+
+    <span class="token single-quoted-string string">'disk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'admin'</span><span class="token punctuation">,</span>
+
+    <span class="token single-quoted-string string">'directory'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'image'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'images'</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'file'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'files'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre>
+<p>Set <code>disk</code> to the <code>admin</code> added above, <code>directory.image</code> and <code>directory.file</code> to use <code>$form-&gt;image($column)</code> and <code>$form-&gt;file($column)</code> Upload directory for uploaded pictures and files.</p>
+<h3 id="Cloud upload"><a href="#Cloud%20upload">Cloud upload</a></h3>
+<p>If you need to upload to cloud storage, you need to install the adapter corresponding to <code>laravel storage</code>, take Qi Niu cloud storage as an example</p>
+<p>First install [zgldh/qiniu-laravel-storage] (<a href="https://github.com/zgldh/qiniu-laravel-storage">https://github.com/zgldh/qiniu-laravel-storage</a>)</p>
+<p>Also configure the disk, add an item in <code>config/filesystems.php</code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token single-quoted-string string">'disks'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'qiniu'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'driver'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'qiniu'</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'domains'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+            <span class="token single-quoted-string string">'default'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'xxxxx.com1.z0.glb.clouddn.com'</span><span class="token punctuation">,</span> <span class="token comment">//your domain name</span>
+            <span class="token single-quoted-string string">'https'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'dn-yourdomain.qbox.me'</span><span class="token punctuation">,</span> <span class="token comment">//your HTTPS domain name</span>
+            <span class="token single-quoted-string string">'custom'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'static.abc.com'</span><span class="token punctuation">,</span> <span class="token comment">//your custom domain name</span>
+         <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'access_key'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">''</span><span class="token punctuation">,</span> <span class="token comment">//AccessKey</span>
+        <span class="token single-quoted-string string">'secret_key'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">''</span><span class="token punctuation">,</span> <span class="token comment">//SecretKey</span>
+        <span class="token single-quoted-string string">'bucket'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">''</span><span class="token punctuation">,</span> <span class="token comment">//Bucket name</span>
+        <span class="token single-quoted-string string">'notify_url'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">''</span><span class="token punctuation">,</span> <span class="token comment">//Persistent processing callback address</span>
+        <span class="token single-quoted-string string">'url'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'http://of8kfibjo.bkt.clouddn.com/'</span><span class="token punctuation">,</span> <span class="token comment">// fill in the file to access the root url</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre>
+<p>Then modify the upload configuration of <code>laravel-admin</code>, open <code>config/admin.php</code> and find:</p>
+<pre class=" language-php"><code class=" language-php">
+<span class="token single-quoted-string string">'upload'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+
+    <span class="token single-quoted-string string">'disk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'qiniu'</span><span class="token punctuation">,</span>
+
+    <span class="token single-quoted-string string">'directory'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'image'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'file'</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token single-quoted-string string">'file'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre>
+<p><code>disk</code> select <code>qiniu</code> configured above.</p>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-inline">
+            v1.8
+        </div>
+        <strong>Documentation powered by <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    </footer>
+</div>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-52301626-3', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" src="js/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+        apiKey: 'f67cec1a592c4a25a3e1d1c0dc38b6af',
+        indexName: 'laravel-admin',
+        inputSelector: '.docsearch',
+        debug: false // Set debug to true if you want to inspect the dropdown
+    });
+</script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.overlayScrollbars.min.js"></script>
+<script src="js/adminlte.min.js"></script>
+<script src="js/jquery.pjax.js"></script>
+<script src="js/prism.js" data-manual=""></script>
+<script src="js/docs.js" data-manual=""></script>
+
+
+</body></html>

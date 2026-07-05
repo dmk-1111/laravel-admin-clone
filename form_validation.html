@@ -77,11 +77,11 @@
 <li class="nav-item has-treeview">
 <a href="#" class="nav-link"><i class="nav-icon fas fa-tachometer-alt"></i><p>Getting started
 <i class="right fas fa-angle-left"></i></p></a><ul class="nav nav-treeview" style="display: none;">
-<li class="nav-item"><a href="/docs/en/installation" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Installation</p></a></li>
-<li class="nav-item"><a href="/docs/en/quick-start" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Quick start</p></a></li>
-<li class="nav-item"><a href="/docs/en/configuration" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Configuration</p></a></li>
-<li class="nav-item"><a href="/docs/en/updating" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Upgrading</p></a></li>
-<li class="nav-item"><a href="/docs/en/content-layout" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Page content & Layout</p></a></li>
+<li class="nav-item"><a href="./installation.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Installation</p></a></li>
+<li class="nav-item"><a href="./quick_start.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Quick start</p></a></li>
+<li class="nav-item"><a href="./configuration.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Configuration</p></a></li>
+<li class="nav-item"><a href="./upgrading.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Upgrading</p></a></li>
+<li class="nav-item"><a href="./page_content_and_layout.html" class="nav-link"><i class="nav-icon far fa-circle"></i><p>Page content & Layout</p></a></li>
 </ul>
 </li>
 <li class="nav-item has-treeview">
@@ -159,9 +159,9 @@
         </div>
     </aside>
 
-    <div class="content-wrapper pl-5 pr-4 py-2" id="pjax-container">
+    <div class="content-wrapper pl-5 pr-4 py-2" id="pjax-container" style="min-height: 180.688px;">
         <div class="content-header">
-            <h1 class="text-dark">Model-Form</h1>
+            <h1 class="text-dark">Form validation</h1>
         </div>
 
         <div class="content px-2">
@@ -171,140 +171,57 @@
                     <div class="toc m-4">
                         <ul>
                                                         <li>
-                                <a href="#Custom tools">Custom tools</a>
+                                <a href="#Create page rules">Create page rules</a>
                                                             </li>
                                                         <li>
-                                <a href="#Form footer">Form footer</a>
+                                <a href="#Update page rules">Update page rules</a>
                                                             </li>
                                                         <li>
-                                <a href="#Other methods">Other methods</a>
+                                <a href="#Database unique check">Database unique check</a>
                                                             </li>
                                                     </ul>
                     </div>
                 </div>
                 <div class="col">
                     <div id="ad" class="float-right">
-                        <script async="" src="js/carbon.js" id="_carbonads_js"></script>
+                        <script async="" src="https://cdn.carbonads.com/carbon.js?serve=CK7DT53L&amp;placement=laraveladminorg" id="_carbonads_js"></script>
                     </div>
                 </div>
             </div>
 
             
-<p>The <code>Encore\Admin\Form</code> class is used to generate a data model-based form. For example, there is a<code>movies</code> table in the database</p>
-<pre><code class="language-sql">movies
-    id          - integer
-    title       - string
-    director    - integer
-    describe    - string
-    rate        - tinyint
-    released    - enum(0, 1)
-    release_at  - timestamp
-    created_at  - timestamp
-    updated_at  - timestamp
+<p><code>model-form</code> uses <code>Laravel</code>'s validation rules to verify the data submitted by the form:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">rules</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'required|min:3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Complex validation rules can be implemented in the callback</span>
+<span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">rules</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$form</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// If it is not an edit state, add field unique verification</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$id</span> <span class="token operator">=</span> <span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token single-quoted-string string">'unique:users,email_address'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>The corresponding data model is <code>App\Models\Movie</code>, and the following code can generate the<code>movies</code> data form:</p>
-<pre><code class="language-php">
-use App\Models\Movie;
-use Encore\Admin\Form;
-use Encore\Admin\Facades\Admin;
-
-$form = new Form(new Movie);
-
-// Displays the record id
-$form->display('id', 'ID');
-
-// Add an input box of type text
-$form->text('title', 'Movie title');
-
-$directors = [
-    'John'  => 1,
-    'Smith' => 2,
-    'Kate'  => 3,
-];
-
-$form->select('director', 'Director')->options($directors);
-
-// Add textarea for the describe field
-$form->textarea('describe', 'Describe');
-
-// Number input
-$form->number('rate', 'Rate');
-
-// Add a switch field
-$form->switch('released', 'Released?');
-
-// Add a date and time selection box
-$form->dateTime('release_at', 'release time');
-
-// Display two time column 
-$form->display('created_at', 'Created time');
-$form->display('updated_at', 'Updated time');
-</code></pre>
-<h2 id="Custom tools"><a href="#Custom%20tools">Custom tools</a></h2>
-<p>The top right corner of the form has two button tools by default. You can modify it in the following way:</p>
-<pre><code class="language-php">$form->tools(function (Form\Tools $tools) {
-
-    // Disable `List` btn.
-    $tools->disableList();
-
-    // Disable `Delete` btn.
-    $tools->disableDelete();
-
-    // Disable `Veiw` btn.
-    $tools->disableView();
-
-    // Add a button, the argument can be a string, or an instance of the object that implements the Renderable or Htmlable interface
-    $tools->add('<a class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>  delete</a>');
-});</code></pre>
-<h2 id="Form footer"><a href="#Form%20footer">Form footer</a></h2>
-<p>Use the following method to remove the elements of the form foot</p>
-<pre><code class="language-php">
-$form->footer(function ($footer) {
-
-    // disable reset btn
-    $footer->disableReset();
-
-    // disable submit btn
-    $footer->disableSubmit();
-
-    // disable `View` checkbox
-    $footer->disableViewCheck();
-
-    // disable `Continue editing` checkbox
-    $footer->disableEditingCheck();
-
-    // disable `Continue Creating` checkbox
-    $footer->disableCreatingCheck();
-
-});
-</code></pre>
-<h2 id="Other methods"><a href="#Other%20methods">Other methods</a></h2>
-<p>Disable submit btn:</p>
-<pre><code class="language-php">$form->disableSubmit();</code></pre>
-<p>Disable reset btn:</p>
-<pre><code class="language-php">$form->disableReset();</code></pre>
-<p>Ignore fields to store</p>
-<pre><code class="language-php">$form->ignore('column1', 'column2', 'column3');</code></pre>
-<p>Set width for label and field</p>
-<pre><code class="language-php">$form->setWidth(10, 2);</code></pre>
-<p>Set form action</p>
-<pre><code class="language-php">$form->setAction('admin/users');</code></pre>
-<p>Determine if the current form page is creating or updating</p>
-<blockquote>
-<p>Since v1.7.6</p>
-</blockquote>
-<pre><code class="language-php">$form->isCreating();
-
-$form->isEditing();</code></pre>
-<blockquote>
-<p>Since v1.8.0</p>
-</blockquote>
-<p>Submit confirmation</p>
-<pre><code class="language-php">$form->confirm('确定更新吗？', 'edit');
-
-$form->confirm('确定创建吗？', 'create');
-
-$form->confirm('确定提交吗？');</code></pre>
+<p>You can also customize the error message for the validation rule:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'code'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">rules</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'required|regex:/^\d+$/|min:10'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'regex'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'code must be numbers'</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'min'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'code can not be less than 10 characters'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If you want to allow the field to be empty, first in the database table to face the field set to <code>NULL</code>, and then</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">rules</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'nullable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Please refer to the more rules <a href="https://laravel.com/docs/5.5/validation">Validation</a>.</p>
+<h2 id="Create page rules"><a href="#Create%20page%20rules">Create page rules</a></h2>
+<p>Only effective when creating a form submission</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">creationRules</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'required|min:3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="Update page rules"><a href="#Update%20page%20rules">Update page rules</a></h2>
+<p>Only effective when the update form is submitted</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">updateRules</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'required|min:3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="Database unique check"><a href="#Database%20unique%20check">Database unique check</a></h2>
+<p>A more common scenario is to submit a form to check if the data already exists. You can use the following method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$form</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'username'</span><span class="token punctuation">)</span>
+     <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">creationRules</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'required'</span><span class="token punctuation">,</span> <span class="token double-quoted-string string">"unique:user_table"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+     <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">updateRules</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'required'</span><span class="token punctuation">,</span> <span class="token double-quoted-string string">"unique:user_table,username,{{id}}"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         </div>
     </div>
     <footer class="main-footer">

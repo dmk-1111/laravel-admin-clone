@@ -1,0 +1,463 @@
+<!DOCTYPE html><html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Open-Admin Docs</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha">
+    <link rel="stylesheet" href="css/nprogress.css">
+    <link rel="stylesheet" href="css/github-markdown.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="css/prism.css">
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/nprogress.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/docs.js"></script>
+    <script src="js/prism.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V1KJ0FQF57"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-V1KJ0FQF57');
+    </script>
+</head>
+
+<body class="skin-blue-light">
+
+        <div class="wrapper">
+
+        <!-- Main Header -->
+<header class="custom-navbar navbar navbar-light bg-white p-0 align-items-stretch">
+    <a class="navbar-brand menu-width container-md bg-semi-dark text-center" href="/docs">
+        <span class="short"><b>OAD</b></span><span class="long"><b>Open</b> Admin-Docs</span>
+    </a>
+    <div class="d-flex flex-fill flex-wrap header-items">
+
+        <a class="flex-shrink order-1 order-sm-0 valign-header px-4 link-secondary" type="button" id="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="icon-bars"></i>
+        </a>
+
+        <ul class="nav navbar-nav hidden-sm visible-lg-block">
+
+        </ul>
+
+        <div class="flex-fill search order-0 order-sm-1" style="display:none;">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </div>
+
+        <ul class="nav order-2 ms-auto d-flex align-items-center">
+
+            <li class="nav-item">
+                <a href="https://open-admin.org" target="_blank" class="container-refresh" title="open-admin.org">
+                    home
+                </a>
+            </li>
+            <!--
+            <li class="nav-item">
+                <a href="https://demo.open-admin.org" target="_blank" class="container-refresh" title="demo.open-admin.org">
+                    demo
+                </a>
+            </li>-->
+            <li class="nav-item">
+                <a href="https://github.com/open-admin-org" target="_blank" class="container-refresh" title="github.com/open-admin-org">
+                    <i class="icon-github brand"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+        <aside id="sidebar" class="menu-width sidebar bg-semi-dark">
+
+                        <!-- search form (Optional) -->
+            <form class="sidebar-form" style="overflow: initial" onsubmit="return false;">
+                <div class="input-group">
+                    <div id="algolia-search"></div>
+
+                </div>
+            </form>
+
+            <form class="sidebar-form" style="overflow: initial;display:none;" onsubmit="return false;">
+                <div class="input-group">
+
+                    <input type="text" autocomplete="off" class="form-control autocomplete" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="icon-search"></i></button>
+                    </span>
+                    <ul class="dropdown-menu" role="menu" style="min-width: 210px;max-height: 300px;overflow: auto;">
+<li><a href="/docs/en/README"><i class="icon-home"></i>Overview</a></li><li><a href="#"><i class="icon-tachometer-alt"></i>
+                    Getting started
+                    </a></li><li><a href="/docs/en/installation"><i class="icon-circle"></i>Installation</a></li><li><a href="/docs/en/quick-start"><i class="icon-circle"></i>Quick start</a></li><li><a href="/docs/en/configuration"><i class="icon-circle"></i>Configuration</a></li><li><a href="/docs/en/updating"><i class="icon-circle"></i>Updating</a></li><li><a href="/docs/en/content-layout"><i class="icon-circle"></i>Page content & Layout</a></li><li><a href="#"><i class="icon-th"></i>Model grid
+                    </a></li><li><a href="/docs/en/model-grid"><i class="icon-circle"></i>Basic usage</a></li><li><a href="/docs/en/model-grid-column"><i class="icon-circle"></i>Column usage</a></li><li><a href="/docs/en/model-grid-column-display"><i class="icon-circle"></i>Column display</a></li><li><a href="/docs/en/model-grid-filters"><i class="icon-circle"></i>Filters</a></li><li><a href="/docs/en/model-grid-column-filter"><i class="icon-circle"></i>Column filter</a></li><li><a href="/docs/en/model-grid-inline-edit"><i class="icon-circle"></i>Inline edit</a></li><li><a href="/docs/en/model-grid-actions"><i class="icon-circle"></i>Row actions</a></li><li><a href="/docs/en/model-grid-export"><i class="icon-circle"></i>Data export</a></li><li><a href="/docs/en/model-grid-header-footer"><i class="icon-circle"></i>Header & Footer</a></li><li><a href="/docs/en/model-grid-init"><i class="icon-circle"></i>Grid Initialization</a></li><li><a href="/docs/en/model-grid-total-row"><i class="icon-circle"></i>Total row</a></li><li><a href="/docs/en/model-grid-quick-search"><i class="icon-circle"></i>Quick search</a></li><li><a href="/docs/en/model-grid-spec-selector"><i class="icon-circle"></i>Spec selector</a></li><li><a href="/docs/en/model-grid-quick-create"><i class="icon-circle"></i>Quick create</a></li><li><a href="/docs/en/model-grid-custom-tools"><i class="icon-circle"></i>Custom tools</a></li><li><a href="/docs/en/model-grid-hotkeys"><i class="icon-circle"></i>Hot keys</a></li><li><a href="/docs/en/model-grid-soft-deletes"><i class="icon-circle"></i>Soft Deleting</a></li><li><a href="#"><i class="icon-paste"></i>Model form
+                    </a></li><li><a href="/docs/en/model-form"><i class="icon-circle"></i>Basic usage</a></li><li><a href="/docs/en/model-form-fields"><i class="icon-circle"></i>Form fields</a></li><li><a href="/docs/en/model-form-upload"><i class="icon-circle"></i>Image/File upload</a></li><li><a href="/docs/en/model-form-json-fields"><i class="icon-circle"></i>JSON fields</a></li><li><a href="/docs/en/model-form-relationships"><i class="icon-circle"></i>Relationship</a></li><li><a href="/docs/en/model-form-linkage"><i class="icon-circle"></i>Form linkage</a></li><li><a href="/docs/en/model-form-field-management"><i class="icon-circle"></i>Form field management</a></li><li><a href="/docs/en/model-form-validation"><i class="icon-circle"></i>Form validation</a></li><li><a href="/docs/en/model-form-callback"><i class="icon-circle"></i>Form callback</a></li><li><a href="/docs/en/model-form-init"><i class="icon-circle"></i>Form Initialization</a></li><li><a href="/docs/en/model-form-layout"><i class="icon-circle"></i>Form layout</a></li><li><a href="#"><i class="icon-eye"></i>Model show
+                    </a></li><li><a href="/docs/en/model-show"><i class="icon-circle"></i>Basic usage</a></li><li><a href="/docs/en/model-show-fields"><i class="icon-circle"></i>Fields</a></li><li><a href="/docs/en/model-show-relationship"><i class="icon-circle"></i>Relationship</a></li><li><a href="/docs/en/model-show-extension"><i class="icon-circle"></i>Extension</a></li><li><a href="/docs/en/model-tree"><i class="icon-tree"></i>Model tree</a></li><li><a href="/docs/en/data-form"><i class="icon-database"></i>Data from</a></li><li><a href="#"><i class="icon-anchor"></i>Admin extensions
+                    </a></li><li><a href="/docs/en/extension-development"><i class="icon-circle"></i>Extension development</a></li><li><a href="/docs/en/extension-helpers"><i class="icon-circle"></i>Helpers</a></li><li><a href="/docs/en/extension-media-manager"><i class="icon-circle"></i>Media manager</a></li><li><a href="/docs/en/extension-api-tester"><i class="icon-circle"></i>API tester</a></li><li><a href="/docs/en/extension-config"><i class="icon-circle"></i>Config manager</a></li><li><a href="/docs/en/extension-scheduling"><i class="icon-circle"></i>Task scheduling</a></li><li><a href="/docs/en/commands"><i class="icon-terminal"></i>Console commands</a></li><li><a href="/docs/en/content-message"><i class="icon-comments"></i>Content message</a></li><li><a href="/docs/en/widgets"><i class="icon-box"></i>Widgets</a></li><li><a href="/docs/en/frontend"><i class="icon-code"></i>CSS/JavaScript</a></li><li><a href="/docs/en/permission"><i class="icon-ban"></i>Permissions</a></li><li><a href="/docs/en/custom-authentication"><i class="icon-handshake"></i>Custom authentication</a></li><li><a href="/docs/en/custom-navbar"><i class="icon-compass"></i>Custom Navbar</a></li><li><a href="/docs/en/custom-chart"><i class="icon-chart-pie"></i>Custom chart</a></li><li><a href="/docs/en/changelog"><i class="icon-history"></i>Changelog</a></li>
+                                    </ul>
+                </div>
+            </form>
+            <!-- /.search form -->
+
+            <nav class="mt-2" id="nav">
+    <div class="custom-menu">
+        <ul class="list-unstyled ps-0 root" id="menu">
+            <li><a href="/docs/en/README"><i class="icon-home"></i><span>Overview<h p=""></h></span></a></li>
+            <li class="treeview">
+                <a href="#" class="has-subs" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false">
+                    <i class="icon-tachometer-alt"></i><span>Getting started
+                    <i class="right fas fa-angle-left"></i></span></a><ul id="collapse-1" class="btn-toggle-nav list-unstyled collapse fw-normal pb-1">
+                <li><a href="/docs/en/installation"><i class="icon-circle"></i><span>Installation</span></a></li>
+                <li><a href="/docs/en/quick-start"><i class="icon-circle"></i><span>Quick start</span></a></li>
+                <li><a href="/docs/en/configuration"><i class="icon-circle"></i><span>Configuration</span></a></li>
+                <li><a href="/docs/en/updating"><i class="icon-circle"></i><span>Updating</span></a></li>
+                <li><a href="/docs/en/content-layout"><i class="icon-circle"></i><span>Page content & Layout</span></a></li>
+            </ul>
+
+            </li>
+            <li class="treeview">
+                <a href="#" class="has-subs" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false"><i class="icon-th"></i><span>Model grid
+                    <i class="right fas fa-angle-left"></i></span></a><ul id="collapse-2" class="btn-toggle-nav list-unstyled collapse fw-normal pb-1">
+                <li><a href="/docs/en/model-grid"><i class="icon-circle"></i><span>Basic usage</span></a></li>
+                <li><a href="/docs/en/model-grid-column"><i class="icon-circle"></i><span>Column usage</span></a></li>
+                <li><a href="/docs/en/model-grid-column-display"><i class="icon-circle"></i><span>Column display</span></a></li>
+                <li><a href="/docs/en/model-grid-filters"><i class="icon-circle"></i><span>Filters</span></a></li>
+                <li><a href="/docs/en/model-grid-column-filter"><i class="icon-circle"></i><span>Column filter</span></a></li>
+                <li><a href="/docs/en/model-grid-inline-edit"><i class="icon-circle"></i><span>Inline edit</span></a></li>
+                <li><a href="/docs/en/model-grid-edit-relationships"><i class="icon-circle"></i><span>Edit Relationships</span></a></li>
+                <li><a href="/docs/en/model-grid-actions"><i class="icon-circle"></i><span>Row actions</span></a></li>
+                <li><a href="/docs/en/model-grid-export"><i class="icon-circle"></i><span>Data export</span></a></li>
+                <li><a href="/docs/en/model-grid-header-footer"><i class="icon-circle"></i><span>Header & Footer</span></a></li>
+                <li><a href="/docs/en/model-grid-init"><i class="icon-circle"></i><span>Grid Initialization</span></a></li>
+                <li><a href="/docs/en/model-grid-total-row"><i class="icon-circle"></i><span>Total row</span></a></li>
+                <li><a href="/docs/en/model-grid-quick-search"><i class="icon-circle"></i><span>Quick search</span></a></li>
+                <li><a href="/docs/en/model-grid-spec-selector"><i class="icon-circle"></i><span>Spec selector</span></a></li>
+                <li><a href="/docs/en/model-grid-quick-create"><i class="icon-circle"></i><span>Quick create</span></a></li>
+                <li><a href="/docs/en/model-grid-custom-tools"><i class="icon-circle"></i><span>Custom tools</span></a></li>
+                <li><a href="/docs/en/model-grid-hotkeys"><i class="icon-circle"></i><span>Hot keys</span></a></li>
+                <li><a href="/docs/en/model-grid-soft-deletes"><i class="icon-circle"></i><span>Soft Deleting</span></a></li>
+            </ul>
+            </li>
+            <li class="treeview">
+                <a href="#" class="has-subs" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false"><i class="icon-paste"></i><span>Model form
+                    <i class="right fas fa-angle-left"></i></span></a><ul id="collapse-3" class="btn-toggle-nav list-unstyled collapse fw-normal pb-1">
+                <li><a href="/docs/en/model-form"><i class="icon-circle"></i><span>Basic usage</span></a></li>
+                <li><a href="/docs/en/model-form-fields"><i class="icon-circle"></i><span>Form fields</span></a></li>
+                <li><a href="/docs/en/model-form-upload"><i class="icon-circle"></i><span>Image/File upload</span></a></li>
+                <li><a href="/docs/en/model-form-json-fields"><i class="icon-circle"></i><span>JSON fields</span></a></li>
+                <li><a href="/docs/en/model-form-relationships"><i class="icon-circle"></i><span>Relationship</span></a></li>
+                <li><a href="/docs/en/model-form-linkage"><i class="icon-circle"></i><span>Form linkage</span></a></li>
+                <li><a href="/docs/en/model-form-field-management"><i class="icon-circle"></i><span>Form field management</span></a></li>
+                <li><a href="/docs/en/model-form-validation"><i class="icon-circle"></i><span>Form validation</span></a></li>
+                <li><a href="/docs/en/model-form-callback"><i class="icon-circle"></i><span>Form callback</span></a></li>
+                <li><a href="/docs/en/model-form-init"><i class="icon-circle"></i><span>Form Initialization</span></a></li>
+                <li><a href="/docs/en/model-form-layout"><i class="icon-circle"></i><span>Form layout</span></a></li>
+            </ul>
+            </li>
+            <li class="treeview">
+                <a href="#" class="has-subs" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false"><i class="icon-eye"></i><span>Model show
+                    <i class="right fas fa-angle-left"></i></span></a><ul id="collapse-4" class="btn-toggle-nav list-unstyled collapse fw-normal pb-1">
+                <li><a href="/docs/en/model-show"><i class="icon-circle"></i><span>Basic usage</span></a></li>
+                <li><a href="/docs/en/model-show-fields"><i class="icon-circle"></i><span>Fields</span></a></li>
+                <li><a href="/docs/en/model-show-relationship"><i class="icon-circle"></i><span>Relationship</span></a></li>
+                <li><a href="/docs/en/model-show-extension"><i class="icon-circle"></i><span>Extension</span></a></li>
+            </ul>
+            </li>
+            <li><a href="/docs/en/model-tree"><i class="icon-tree"></i><span>Model tree</span></a></li>
+            <li><a href="/docs/en/admin-controller-hooks"><i class="icon-candy-cane"></i><span>Admin Controller hooks</span></a></li>
+            <li><a href="/docs/en/data-form"><i class="icon-database"></i><span>Data from</span></a></li>
+            <li class="treeview">
+                <a href="#" class="has-subs" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false"><i class="icon-anchor"></i><span>Admin extensions
+                    <i class="right fas fa-angle-left"></i></span>
+                </a>
+                <ul id="collapse-5" class="btn-toggle-nav list-unstyled collapse fw-normal pb-1">
+                    <li><a href="/docs/en/extension-development"><i class="icon-circle"></i><span>Extension development</span></a></li>
+                    <li><a href="/docs/en/extension-helpers"><i class="icon-circle"></i><span>Helpers</span></a></li>
+                    <li><a href="/docs/en/extension-media-manager"><i class="icon-circle"></i><span>Media manager</span></a></li>
+                    <li><a href="/docs/en/extension-config"><i class="icon-circle"></i><span>Config manager</span></a></li>
+                    <li><a href="/docs/en/extension-grid-sortable"><i class="icon-circle"></i><span>Grid sortable</span></a></li>
+                    <li><a href="/docs/en/extension-ckeditor"><i class="icon-circle"></i><span>Ckeditor</span></a></li>
+                    <li><a href="/docs/en/extension-api-tester"><i class="icon-circle"></i><span>API tester</span></a></li>
+                    <li><a href="/docs/en/extension-scheduling"><i class="icon-circle"></i><span>Task scheduling</span></a></li>
+                    <li><a href="/docs/en/extension-phpinfo"><i class="icon-circle"></i><span>PHPinfo</span></a></li>
+                    <li><a href="/docs/en/extension-log-viewer"><i class="icon-circle"></i><span>Log viewer</span></a></li>
+                    <li><a href="/docs/en/extension-page-designer"><i class="icon-circle"></i><span>Page designer</span></a></li>
+                    <li><a href="/docs/en/extension-reporter"><i class="icon-circle"></i><span>Reporter</span></a></li>
+
+                </ul>
+
+            </li>
+            <li><a href="/docs/en/commands"><i class="icon-terminal"></i><span>Console commands</span></a></li>
+            <li><a href="/docs/en/content-message"><i class="icon-comments"></i><span>Content message</span></a></li>
+            <li><a href="/docs/en/widgets"><i class="icon-box"></i><span>Widgets</span></a></li>
+            <li><a href="/docs/en/frontend"><i class="icon-code"></i><span>CSS/JavaScript</span></a></li>
+            <li><a href="/docs/en/permission"><i class="icon-ban"></i><span>Permissions</span></a></li>
+            <li><a href="/docs/en/custom-authentication"><i class="icon-handshake"></i><span>Custom authentication</span></a></li>
+            <li><a href="/docs/en/custom-navbar"><i class="icon-compass"></i><span>Custom Navbar</span></a></li>
+            <li><a href="/docs/en/custom-chart"><i class="icon-chart-pie"></i><span>Custom chart</span></a></li>
+            <li><a href="/docs/en/faq"><i class="icon-question"></i><span>FAQ</span></a></li>
+            <li class="treeview d-none">
+                <a href="#" class="has-subs" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false"><i class="icon-question"></i><span>FAQ
+                    <i class="right fas fa-angle-left"></i></span>
+                </a>
+                <ul id="collapse-6" class="btn-toggle-nav list-unstyled collapse fw-normal pb-1">
+                    <li><a href="/docs/en/extension-development"><i class="icon-circle"></i><span>Extension development</span></a></li>
+                </ul>
+            </li>
+            <li><a href="/docs/en/changelog"><i class="icon-history"></i><span>Changelog</span></a></li>
+        </ul>
+    </div>
+</nav>
+
+        </aside>
+        <main id="main" class="p-4">
+            <div id="pjax-container">
+
+
+
+
+<div id="app">
+
+<section class="content">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/docs" target="_blank"><i class="icon-home" style="margin-right:6px;"></i>Docs Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs/en">En</a></li>
+                    <li class="breadcrumb-item"><a href="/docs/en/changelog">Changelog</a></li>
+            </ol>
+</nav>    <article class="markdown-body">
+      <h1>Releases</h1>
+<ul>
+<li><a href="#v-1-0-28">V1.0.25 - 2022-11-08</a></li>
+<li><a href="#v-1-0-27">V1.0.27 - 2023-04-03</a></li>
+<li><a href="#v-1-0-26">V1.0.26 - 2023-02-02</a></li>
+<li><a href="#v-1-0-25">V1.0.25 - 2022-11-08</a></li>
+<li><a href="#v-1-0-24">V1.0.24 - 2022-11-08</a></li>
+<li><a href="#v-1-0-23">V1.0.23 - 2022-11-07</a></li>
+<li><a href="#v-1-0-22">V1.0.22 - 2022-09-21</a></li>
+<li><a href="#v-1-0-21">V1.0.21 - 2022-09-05</a></li>
+<li><a href="#v-1-0-20">V1.0.20 - 2022-06-30</a></li>
+<li><a href="#v-1-0-19">V1.0.19 - 2022-06-23</a></li>
+<li><a href="#v-1-0-18">V1.0.18 - 2022-06-15</a></li>
+<li><a href="#v-1-0-18">V1.0.17 - 2022-06-15</a></li>
+<li><a href="#v-1-0-18">V1.0.16 - 2022-06-15</a></li>
+<li><a href="#v-1-0-15">V1.0.15 - 2022-06-14</a></li>
+<li><a href="#v-1-0-14">V1.0.14 - 2022-06-01</a></li>
+<li><a href="#v-1-0-13">V1.0.13 - 2022-05-23</a></li>
+<li><a href="#v-1-0-12">V1.0.12 - 2022-05-11</a></li>
+<li><a href="#v-1-0-11">V1.0.11 - 2022-04-14</a></li>
+<li><a href="#v-1-0-10">V1.0.10 / v1.0.0 - 2022-02-17</a></li>
+</ul>
+<h2 id="v-1-0-27"><a href="#v-1-0-27">V1.0.28 - 2023-04-03</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>Added addional chinese translations</li>
+<li><a href="https://github.com/open-admin-org/open-admin/pull/111">https://github.com/open-admin-org/open-admin/pull/111</a> (additioal japanse transation + typos fixes)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/109">https://github.com/open-admin-org/open-admin/issues/109</a> (sorting for belongsTo)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/106">https://github.com/open-admin-org/open-admin/issues/106</a> (overlapping sections)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/99">https://github.com/open-admin-org/open-admin/issues/99</a> (italian lanuage support)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/97">https://github.com/open-admin-org/open-admin/issues/97</a> (delete hook with false message)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/95">https://github.com/open-admin-org/open-admin/issues/95</a> (faster checkboxes)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/94">https://github.com/open-admin-org/open-admin/issues/94</a> (Use laravel's asset helper as opposed to url())</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/91">https://github.com/open-admin-org/open-admin/issues/91</a> (fixed fields inside relations)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/90">https://github.com/open-admin-org/open-admin/issues/90</a> (Menu Collapse styles)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/84">https://github.com/open-admin-org/open-admin/issues/84</a> ($form->belongsToMany list in selection modal is losing its events after page change.)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/83">https://github.com/open-admin-org/open-admin/issues/83</a> (Interceptor fix)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/71">https://github.com/open-admin-org/open-admin/issues/71</a> (Stacked checkboxes with required)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/62">https://github.com/open-admin-org/open-admin/issues/62</a> (User image upload)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/48">https://github.com/open-admin-org/open-admin/issues/48</a> (Switcher issuen when inline)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/51">https://github.com/open-admin-org/open-admin/issues/51</a> (Fix default tab)</li>
+</ul>
+<h3>Contributions</h3>
+<p>Much appreciation for the contributions for this release:</p>
+<ul>
+<li><a href="https://github.com/SachinBahukhandi">https://github.com/SachinBahukhandi</a></li>
+<li><a href="https://github.com/bytebrain">https://github.com/bytebrain</a></li>
+<li><a href="https://github.com/d3v2a">https://github.com/d3v2a</a></li>
+<li><a href="https://github.com/afaulkner-kfs">https://github.com/afaulkner-kfs</a></li>
+<li><a href="https://github.com/andrew-m-p">https://github.com/andrew-m-p</a></li>
+<li><a href="https://github.com/naoto24kawa">https://github.com/naoto24kawa</a></li>
+<li><a href="https://github.com/haboshi">https://github.com/haboshi</a></li>
+</ul>
+<h2 id="v-1-0-27"><a href="#v-1-0-27">V1.0.27 - 2023-04-03</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>Added addional chinese translations</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/48">https://github.com/open-admin-org/open-admin/issues/48</a> (Switcher issuen when inline)</li>
+<li><a href="https://github.com/open-admin-org/open-admin/issues/51">https://github.com/open-admin-org/open-admin/issues/51</a> (Fix default tab)</li>
+</ul>
+<h3>Contributions</h3>
+<p>Much appreciation for the contributions for this release:</p>
+<ul>
+<li><a href="https://github.com/RCyrix">https://github.com/RCyrix</a></li>
+<li><a href="https://github.com/myxiaoao">https://github.com/myxiaoao</a></li>
+</ul>
+<h2 id="v-1-0-26"><a href="#v-1-0-26">V1.0.26 - 2023-02-02</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>Fixed user icon url</li>
+<li>Remove styles from login screen</li>
+</ul>
+<h2 id="v-1-0-25"><a href="#v-1-0-25">V1.0.25 - 2022-11-08</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>Load scripts tags with src after ajax call.
+Now you can load script tags like this: <code><script srrc'="" path-to-script-to-be-loaded.js'=""></script></code></li>
+</ul>
+<h2 id="v-1-0-24"><a href="#v-1-0-24">V1.0.24 - 2022-11-08</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>Get right selector for batch edit / delete</li>
+</ul>
+<h2 id="v-1-0-23"><a href="#v-1-0-23">V1.0.23 - 2022-11-07</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>now able to pass boolean to <code>$form->readonly($boolean)</code> / <code>$form->disabled($boolan)</code>
+<pre><code class="language-php">$form
+    ->number('comment_id', __('Comment id'))
+    ->default((request()->comment_id ?? ''))
+    ->readonly((request()->comment_id ? true : false));</code></pre></li>
+<li>added morphMany to show section</li>
+</ul>
+<h3>Bug fixes:</h3>
+<ul>
+<li>Number field: disable change for readonly / disabled fields</li>
+<li>CSS: Space between cards</li>
+<li>Show footer in card for relations inside Show / display part</li>
+<li>Form Builder also check on full url when generating <code>_pervious_</code> field</li>
+<li>Batch Actions removed getElementClass</li>
+</ul>
+<h3>Contributions</h3>
+<p>Much appreciation for the contributions for this release:</p>
+<ul>
+<li><a href="https://github.com/hirayama-onagigawa-computing">https://github.com/hirayama-onagigawa-computing</a></li>
+<li><a href="https://github.com/franzyke">https://github.com/franzyke</a></li>
+<li><a href="https://github.com/yeminlideveloper">https://github.com/yeminlideveloper</a></li>
+</ul>
+<h2 id="v-1-0-22"><a href="#v-1-0-22">V1.0.22 - 2022-09-22</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>disable batch edit</li>
+</ul>
+<h3>Bug fixes:</h3>
+<ul>
+<li>made column selector work propery (thanks to hirayama-onagigawa-computing)</li>
+</ul>
+<h3>Contributions</h3>
+<p>Much appreciation for the contributions for this release:</p>
+<ul>
+<li><a href="https://github.com/hirayama-onagigawa-computing">https://github.com/hirayama-onagigawa-computing</a></li>
+</ul>
+<h2 id="v-1-0-21"><a href="#v-1-0-21">V1.0.21 - 2022-09-05</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>css selector for choichesjs fixed</li>
+</ul>
+<h3>Contributions</h3>
+<p>Much appreciation for the contributions for this release:</p>
+<ul>
+<li><a href="https://github.com/yeminlideveloper">https://github.com/yeminlideveloper</a></li>
+</ul>
+<h2 id="v-1-0-20"><a href="#v-1-0-20">V1.0.20 - 2022-06-30</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>fields in widget forms can now be altered (not protected anymore)</li>
+<li>list fields can be sorted now</li>
+</ul>
+<h2 id="v-1-0-19"><a href="#v-1-0-19">V1.0.19 - 2022-06-23</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>show/hide password for password fields</li>
+<li>list fields can be sorted now</li>
+</ul>
+<h2 id="v-1-0-18"><a href="#v-1-0-18">V1.0.16/17/18 - 2022-06-15</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>js / css resource can now be excluded from the minifier</li>
+<li>allow ajax request to return without title tag</li>
+</ul>
+<h2 id="v-1-0-15"><a href="#v-1-0-15">V1.0.15 - 2022-06-14</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>introducting controller hooks: <a href="https://open-admin.org/docs/en/admin-controller-hooks">https://open-admin.org/docs/en/admin-controller-hooks</a></li>
+<li>Speeding up ajax request. Replace dom-crawler by plain str_replace functions</li>
+<li>new config option to exclude fields from the opration log (like passwords)</li>
+</ul>
+<h3>Bug fixes:</h3>
+<ul>
+<li>bootstrap colors for operation log</li>
+<li>prevent thumbnails from being delete on save for picture fields</li>
+</ul>
+<h2 id="v-1-0-14"><a href="#v-1-0-14">V1.0.14 - 2022-06-01</a></h2>
+<h3>Bug fixes:</h3>
+<ul>
+<li>make switch field working properly</li>
+<li>fix overflow bug for main wrapper sidebar</li>
+</ul>
+<h2 id="v-1-0-13"><a href="#v-1-0-13">V1.0.13 - 2022-05-23</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>artisan command for dev links. For development purpose you can create a symbolic link to resource dirctory so tests can be done on the fly without the resources needed to be published.
+<pre><code>php artisan admin:dev-links</code></pre></li>
+</ul>
+<h3>Bug fixes:</h3>
+<ul>
+<li>allow linked forms to have upload fields</li>
+</ul>
+<h2 id="v-1-0-12"><a href="#v-1-0-12">V1.0.12 - 2022-05-11</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>get function for admin.ajax</li>
+<li>small buttons</li>
+<li>default on empty value
+<pre><code class="language-php">$form->text('columnName')->defaultOnEmpty('value_for_db');</code></pre></li>
+</ul>
+<h3>Bug fixes:</h3>
+<ul>
+<li>always prepare value for fields</li>
+<li>not deleting files when they are not there</li>
+<li>default value for key/value list</li>
+</ul>
+<h2 id="v-1-0-11"><a href="#v-1-0-11">V1.0.11 - 2022-04-14</a></h2>
+<h3>New features:</h3>
+<ul>
+<li>changed button colors</li>
+</ul>
+<h3>Bug fixes:</h3>
+<ul>
+<li>limit php version constaints</li>
+</ul>
+<h2 id="v-1-0-10"><a href="#v-1-0-10">V1.0.10 / v1.0.0 - 2022-02-17</a></h2>
+<p>Started refactoring the whole architecture. This should have been with different version number below 1 (0.1 / 0.9 ect..) After this a usable an actual usable version 1 was launched.</p>
+    </article>
+</section>
+</div>
+</div>
+        </main></div>
+    
+
+    <button id="totop" title="Go to top" style="display: none;"><i class="icon-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
+<script type="text/javascript">
+  docsearch({
+    appId: 'SOP6WOLS7N',
+    apiKey: '83991ab33a2129eee183a49c4b8cc114',
+    indexName: 'open-admin',
+    container: '#algolia-search',
+    debug: false // Set debug to true if you want to inspect the modal
+
+  });
+
+</script>
+    
+
+</body></html>
